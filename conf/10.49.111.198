@@ -1,0 +1,931 @@
+spawn ssh musa@10.49.111.198
+Password:
+Last login: Mon Nov  5 01:21:17 2018 from 172.29.84.109
+--- JUNOS 18.2R1.2 Kernel 64-bit  JNPR-11.0-20180601.3634e75_buil
+musa@vmx105> show configuration system host-name | display inheritance 
+##
+## 'vmx105' was inherited from group 'member0'
+##
+host-name vmx105;
+
+musa@vmx105> show config|display inheritance brief|no-more 
+## Last commit: 2018-11-04 21:32:22 PST by root
+version 18.2R1.2;
+system {
+    login {
+        ## 'wheel' was inherited from group 'global'
+        class wheel {
+            ## 'snmp' was inherited from group 'global'
+            permissions snmp;
+        }
+        user northstar {
+            uid 2004;
+            class super-user;
+            authentication {
+                encrypted-password "$6$aG8JZB0G$hg45fUk9DIXlNVMtKY/eyjPqBen0e4ji/ILu8IbrbbFvXykAulKLrcrQhcaXufU8emwqcQCZKlcc./DBq14UM1"; ## SECRET-DATA
+                ssh-rsa "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAxV8WuHoBvaRbJkqv4Lf4udDDEOz2AXXGkm01NwOqE6AN2LkB8A0+HHk3d4Em4aXRD4pnO6S6lRvpSy1qMo0tYu2BpqmpG+1NXP+HCbd2DotG74vFc5HXptL/JAO0m0CI+umU2bCr+UwBxypKqP3EQEXL157twjWL4uZvOs6BJGnipvpbtJA+crFK1BLy2Ajlgf7kB27t+c0F6mC0OBq+yrZNtZgLR5P3IBk2eOywkb8NQ8c9BcDEG0tsHufQes4dStqJa2KH/cAk2wM/ygF9oJFcwx67lSUkb3voyamKj5/ZvWodGgyKe2mbvDwkdZxkZZ0384D+BJBgImyWH8zJEw== musamustafa@sv8-pod6-vmm.englab.juniper.net"; ## SECRET-DATA
+                ssh-rsa "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAvh7+9O8tRdDItLjJeHbHJjFGunfG6qup94XSdLh8mce4hyiNlrL0f7jPhg21f9cb2YUII1EyX1O+tUmssGm4Sn+GyRM6smHDceEupfqbl58FORgJn100/KXqp1sHX+MFzLMqOT17Fd1TEBYtgHBJISxX4NEbyACpZ0iUp/gVSxWdzUJzAtCQIrYYmPXUktrEQahj82GQQIkp11H+v8jHzd1w++m9WIzajQu5cTE0KwYUWkUOWSqJYpDcI8s9U1OvPVnayXcF/foLOxEAf6UXNU+ITT5WXYWgHDQ+ZXs1S6L/R31gGBZbq2M6/CijGvmyCBZgIW9cSv8/pbx/tr3OHw== root@kvm3.wan-controller.juniper.net"; ## SECRET-DATA
+            }
+        }
+        user regress {
+            ## '928' was inherited from group 'global'
+            uid 928;
+            ## 'superuser' was inherited from group 'global'
+            class superuser;
+            ## 'csh' was inherited from group 'global'
+            shell csh;
+            authentication {
+                ## '$1$kPU..$w.4FGRAGanJ8U4Yq6sbj7.' was inherited from group 'global'
+                encrypted-password "$1$kPU..$w.4FGRAGanJ8U4Yq6sbj7."; ## SECRET-DATA
+                ssh-rsa "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA0fmMklUuajSlOmq2ciYPUhTN5LmJ40w6i+97CpYrY5nEDChbvmbjDO29wcfeKqFSK3bgsH3QHM+Z5iF3zQ2fJwwLi7W2zEIl787nqax8LKV6oD+KAdU3+wbcqz3va6a2tpP1pDCM9mLpoH17vAjf3FMQ7fUnaaBB3MewC4wLshVKwqktasZK/SGTKQy67Z24OMfUU7/zj0BxcSOxGBfLk5jmAjux3meMjTLvvluq9CRdd4IyW2h8HBTHVlY52/+wXLxC/FeXc+lqWYdGbZgcQ9ad16RzVqId/YnKB691jvXuCx2/SsAquoVEWPC4wvy2BC45gLG5trFDsUY/uEEVgQ== rbu-devtest-northstar-user01@q-pod03-vmm.englab.juniper.net"; ## SECRET-DATA
+                ssh-rsa "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAvh7+9O8tRdDItLjJeHbHJjFGunfG6qup94XSdLh8mce4hyiNlrL0f7jPhg21f9cb2YUII1EyX1O+tUmssGm4Sn+GyRM6smHDceEupfqbl58FORgJn100/KXqp1sHX+MFzLMqOT17Fd1TEBYtgHBJISxX4NEbyACpZ0iUp/gVSxWdzUJzAtCQIrYYmPXUktrEQahj82GQQIkp11H+v8jHzd1w++m9WIzajQu5cTE0KwYUWkUOWSqJYpDcI8s9U1OvPVnayXcF/foLOxEAf6UXNU+ITT5WXYWgHDQ+ZXs1S6L/R31gGBZbq2M6/CijGvmyCBZgIW9cSv8/pbx/tr3OHw== root@kvm3.wan-controller.juniper.net"; ## SECRET-DATA
+                ssh-rsa "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAxV8WuHoBvaRbJkqv4Lf4udDDEOz2AXXGkm01NwOqE6AN2LkB8A0+HHk3d4Em4aXRD4pnO6S6lRvpSy1qMo0tYu2BpqmpG+1NXP+HCbd2DotG74vFc5HXptL/JAO0m0CI+umU2bCr+UwBxypKqP3EQEXL157twjWL4uZvOs6BJGnipvpbtJA+crFK1BLy2Ajlgf7kB27t+c0F6mC0OBq+yrZNtZgLR5P3IBk2eOywkb8NQ8c9BcDEG0tsHufQes4dStqJa2KH/cAk2wM/ygF9oJFcwx67lSUkb3voyamKj5/ZvWodGgyKe2mbvDwkdZxkZZ0384D+BJBgImyWH8zJEw== musamustafa@sv8-pod6-vmm.englab.juniper.net"; ## SECRET-DATA
+            }
+        }
+        user musa {
+            uid 2001;
+            class super-user;
+            authentication {
+                encrypted-password "$6$7hzA3KdO$W6wJOOfdFe0f8jHVRPucQkxTMeO5G/AsCYBMKVs8QZbPje/p5IedmIwXwqbKLyVaJ3K/QNumaXB4cn3BNWSN71"; ## SECRET-DATA
+            }
+        }
+        ## 'remote' was inherited from group 'global'
+        user remote {
+            ## '2000' was inherited from group 'global'
+            uid 2000;
+            ## 'super-user' was inherited from group 'global'
+            class super-user;
+        }
+    }
+    root-authentication {
+        ## '$1$ZUlES4dp$OUwWo1g7cLoV/aMWpHUnC/' was inherited from group 'global'
+        encrypted-password "$1$ZUlES4dp$OUwWo1g7cLoV/aMWpHUnC/"; ## SECRET-DATA
+        ssh-rsa "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAxV8WuHoBvaRbJkqv4Lf4udDDEOz2AXXGkm01NwOqE6AN2LkB8A0+HHk3d4Em4aXRD4pnO6S6lRvpSy1qMo0tYu2BpqmpG+1NXP+HCbd2DotG74vFc5HXptL/JAO0m0CI+umU2bCr+UwBxypKqP3EQEXL157twjWL4uZvOs6BJGnipvpbtJA+crFK1BLy2Ajlgf7kB27t+c0F6mC0OBq+yrZNtZgLR5P3IBk2eOywkb8NQ8c9BcDEG0tsHufQes4dStqJa2KH/cAk2wM/ygF9oJFcwx67lSUkb3voyamKj5/ZvWodGgyKe2mbvDwkdZxkZZ0384D+BJBgImyWH8zJEw== musamustafa@sv8-pod6-vmm.englab.juniper.net"; ## SECRET-DATA
+        ssh-rsa "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAvh7+9O8tRdDItLjJeHbHJjFGunfG6qup94XSdLh8mce4hyiNlrL0f7jPhg21f9cb2YUII1EyX1O+tUmssGm4Sn+GyRM6smHDceEupfqbl58FORgJn100/KXqp1sHX+MFzLMqOT17Fd1TEBYtgHBJISxX4NEbyACpZ0iUp/gVSxWdzUJzAtCQIrYYmPXUktrEQahj82GQQIkp11H+v8jHzd1w++m9WIzajQu5cTE0KwYUWkUOWSqJYpDcI8s9U1OvPVnayXcF/foLOxEAf6UXNU+ITT5WXYWgHDQ+ZXs1S6L/R31gGBZbq2M6/CijGvmyCBZgIW9cSv8/pbx/tr3OHw== root@kvm3.wan-controller.juniper.net"; ## SECRET-DATA
+    }
+    ## 'vmx105' was inherited from group 'member0'
+    host-name vmx105;
+    ## 'englab.juniper.net' was inherited from group 'global'
+    domain-name englab.juniper.net;
+    ## 'englab.juniper.net' was inherited from group 'global'
+    ## 'juniper.net' was inherited from group 'global'
+    ## 'jnpr.net' was inherited from group 'global'
+    domain-search [ englab.juniper.net juniper.net jnpr.net ];
+    ## 'backup-router' was inherited from group 'member0'
+    ## '10.49.127.254' was inherited from group 'member0'
+    backup-router 10.49.127.254;
+    ## 'America/Los_Angeles' was inherited from group 'global'
+    time-zone America/Los_Angeles;
+    ## 'debugger-on-break' was inherited from group 'global'
+    debugger-on-break;
+    ## 'dump-on-panic' was inherited from group 'global'
+    dump-on-panic;
+    ## 'password' was inherited from group 'global'
+    ## 'radius' was inherited from group 'global'
+    authentication-order [ password radius ];
+    ports {
+        console log-out-on-disconnect;
+    }
+    name-server {
+        ## '10.49.0.4' was inherited from group 'global'
+        10.49.0.4;
+        ## '10.49.0.37' was inherited from group 'global'
+        10.49.0.37;
+    }
+    radius-server {
+        ## '10.48.144.16' was inherited from group 'global'
+        ## '$9$TQ/t1IcSrKAt0IRheK8X7VYgaZDm5zNdiqmTn6' was inherited from group 'global'
+        10.48.144.16 secret "$9$TQ/t1IcSrKAt0IRheK8X7VYgaZDm5zNdiqmTn6"; ## SECRET-DATA
+        ## '10.48.144.17' was inherited from group 'global'
+        ## '$9$GqUqf3nCApOPfQn690ORhSeWL7-boZDylsgoGHk' was inherited from group 'global'
+        10.48.144.17 secret "$9$GqUqf3nCApOPfQn690ORhSeWL7-boZDylsgoGHk"; ## SECRET-DATA
+    }
+    services {
+        ## 'finger' was inherited from group 'global'
+        finger;
+        ## 'ftp' was inherited from group 'global'
+        ftp;
+        ## 'rlogin' was inherited from group 'global'
+        rlogin;
+        ## 'ssh' was inherited from group 'global'
+        ssh {
+            ## 'allow' was inherited from group 'global'
+            root-login allow;
+        }
+        ## 'telnet' was inherited from group 'global'
+        telnet;
+        ## 'xnm-clear-text' was inherited from group 'global'
+        xnm-clear-text;
+        netconf {
+            ssh;
+        }
+    }
+    syslog {
+        host 172.16.18.1 {
+            daemon info;
+            port 1514;
+            match-strings RPM_TEST_RESULTS;
+        }
+        ## 'log' was inherited from group 'global'
+        host log {
+            ## 'kernel' was inherited from group 'global'
+            ## 'info' was inherited from group 'global'
+            kernel info;
+            ## 'any' was inherited from group 'global'
+            ## 'notice' was inherited from group 'global'
+            any notice;
+            ## 'pfe' was inherited from group 'global'
+            ## 'info' was inherited from group 'global'
+            pfe info;
+            ## 'interactive-commands' was inherited from group 'global'
+            ## 'any' was inherited from group 'global'
+            interactive-commands any;
+        }
+        ## 'messages' was inherited from group 'global'
+        file messages {
+            ## 'kernel' was inherited from group 'global'
+            ## 'info' was inherited from group 'global'
+            kernel info;
+            ## 'any' was inherited from group 'global'
+            ## 'notice' was inherited from group 'global'
+            any notice;
+            ## 'authorization' was inherited from group 'global'
+            ## 'info' was inherited from group 'global'
+            authorization info;
+            ## 'pfe' was inherited from group 'global'
+            ## 'info' was inherited from group 'global'
+            pfe info;
+            ## 'archive' was inherited from group 'global'
+            ## 'world-readable' was inherited from group 'global'
+            archive world-readable;
+        }
+        ## 'security' was inherited from group 'global'
+        file security {
+            ## 'interactive-commands' was inherited from group 'global'
+            ## 'any' was inherited from group 'global'
+            interactive-commands any;
+            ## 'archive' was inherited from group 'global'
+            ## 'world-readable' was inherited from group 'global'
+            archive world-readable;
+        }
+    }
+    ## 'processes' was inherited from group 'global'
+    processes {
+        ## 'routing' was inherited from group 'global'
+        ## 'enable' was inherited from group 'global'
+        routing enable;
+        ## 'ntp' was inherited from group 'global'
+        ## 'enable' was inherited from group 'global'
+        ntp enable;
+        ## 'management' was inherited from group 'global'
+        ## 'enable' was inherited from group 'global'
+        management enable;
+        ## 'watchdog' was inherited from group 'global'
+        ## 'enable' was inherited from group 'global'
+        watchdog enable;
+        ## 'snmp' was inherited from group 'global'
+        ## 'enable' was inherited from group 'global'
+        snmp enable;
+        ## 'inet-process' was inherited from group 'global'
+        ## 'enable' was inherited from group 'global'
+        inet-process enable;
+        ## 'mib-process' was inherited from group 'global'
+        ## 'enable' was inherited from group 'global'
+        mib-process enable;
+    }
+    ## 'ntp' was inherited from group 'global'
+    ntp {
+        ## '66.129.255.75' was inherited from group 'global'
+        boot-server 66.129.255.75;
+        ## '66.129.255.75' was inherited from group 'global'
+        server 66.129.255.75;
+        ## '172.29.131.60' was inherited from group 'global'
+        server 172.29.131.60;
+        ## '172.29.135.60' was inherited from group 'global'
+        server 172.29.135.60;
+    }
+}
+chassis {
+    ## 'dump-on-panic' was inherited from group 'global'
+    dump-on-panic;
+    network-services enhanced-ip;
+}
+services {
+    analytics {
+        streaming-server ns-ifd {
+            remote-address 172.16.18.1;
+            remote-port 2000;
+        }
+        streaming-server ns-ifl {
+            remote-address 172.16.18.1;
+            remote-port 2001;
+        }
+        streaming-server ns-lsp {
+            remote-address 172.16.18.1;
+            remote-port 2002;
+        }
+        export-profile ns {
+            local-address 11.0.0.105;
+            reporting-rate 30;
+            format gpb;
+            transport udp;
+        }
+        sensor ifd {
+            server-name ns-ifd;
+            export-name ns;
+            resource /junos/system/linecard/interface/;
+        }
+        sensor ifl {
+            server-name ns-ifl;
+            export-name ns;
+            resource /junos/system/linecard/interface/logical/usage/;
+        }
+        sensor lsp {
+            server-name ns-lsp;
+            export-name ns;
+            resource /junos/services/label-switched-path/usage/;
+        }
+    }
+    rpm {
+        probe northstar-ifl {
+            test ge-0/1/2.0 {
+                probe-type icmp-ping-timestamp;
+                target address 11.102.105.1;
+                probe-count 15;
+                probe-interval 1;
+                test-interval 20;
+                source-address 11.102.105.2;
+                history-size 512;
+                moving-average-size 60;
+                traps test-completion;
+                destination-interface ge-0/1/2.0;
+                one-way-hardware-timestamp;
+            }
+            test ge-0/1/1.0 {
+                probe-type icmp-ping-timestamp;
+                target address 11.101.105.1;
+                probe-count 15;
+                probe-interval 1;
+                test-interval 20;
+                source-address 11.101.105.2;
+                history-size 512;
+                moving-average-size 60;
+                traps test-completion;
+                destination-interface ge-0/1/1.0;
+                one-way-hardware-timestamp;
+            }
+            test ge-0/0/2.0 {
+                probe-type icmp-ping-timestamp;
+                target address 11.105.106.2;
+                probe-count 15;
+                probe-interval 1;
+                test-interval 20;
+                source-address 11.105.106.1;
+                history-size 512;
+                moving-average-size 60;
+                traps test-completion;
+                destination-interface ge-0/0/2.0;
+                one-way-hardware-timestamp;
+            }
+            test ge-0/0/4.0 {
+                probe-type icmp-ping-timestamp;
+                target address 11.105.107.2;
+                probe-count 15;
+                probe-interval 1;
+                test-interval 20;
+                source-address 11.105.107.1;
+                history-size 512;
+                moving-average-size 60;
+                traps test-completion;
+                destination-interface ge-0/0/4.0;
+                one-way-hardware-timestamp;
+            }
+        }
+    }
+}
+interfaces {
+    ge-0/0/0 {
+        vlan-tagging;
+        speed 10m;
+    }
+    ge-0/0/2 {
+        speed 10m;
+        unit 0 {
+            family inet {
+                address 11.105.106.1/30;
+            }
+            family iso;
+            family mpls {
+                maximum-labels 4;
+            }
+        }
+    }
+    ge-0/0/3 {
+        speed 10m;
+    }
+    ge-0/0/4 {
+        speed 10m;
+        unit 0 {
+            family inet {
+                address 11.105.107.1/30;
+            }
+            family iso;
+            family mpls {
+                maximum-labels 4;
+            }
+        }
+    }
+    ge-0/0/8 {
+        unit 0 {
+            family inet {
+                address 172.16.18.105/24;
+            }
+        }
+    }
+    ge-0/0/9 {
+        unit 0 {
+            family inet {
+                filter {
+                    input filter-11.255;
+                }
+                address 172.16.25.105/24;
+            }
+        }
+    }
+    ge-0/1/1 {
+        speed 10m;
+        unit 0 {
+            family inet {
+                address 11.101.105.2/30;
+            }
+            family iso;
+            family mpls {
+                maximum-labels 4;
+            }
+        }
+    }
+    ge-0/1/2 {
+        speed 10m;
+        unit 0 {
+            family inet {
+                address 11.102.105.2/30;
+            }
+            family iso;
+            family mpls {
+                maximum-labels 4;
+            }
+        }
+    }
+    gre {
+        unit 0 {
+            tunnel {
+                source 172.16.18.105;
+                destination 172.16.18.199;
+            }
+            family inet {
+                address 11.105.199.2/30;
+            }
+            family iso;
+        }
+    }
+    lo0 {
+        unit 0 {
+            family inet {
+                address 11.0.0.105/32;
+                address 11.0.101.105/32;
+                address 11.0.102.105/32;
+                address 11.0.103.105/32;
+                address 11.0.104.105/32;
+                address 11.0.106.105/32;
+                address 11.0.107.105/32;
+                address 11.255.101.105/32;
+                address 11.255.102.105/32;
+                address 11.255.104.105/32;
+                address 11.255.103.105/32;
+                address 11.255.106.105/32;
+                address 11.255.107.105/32;
+            }
+            family iso {
+                address 49.0011.0110.0000.0105.00;
+            }
+            family mpls;
+        }
+    }
+    ## 'fxp0' was inherited from group 'member0'
+    fxp0 {
+        ## '0' was inherited from group 'member0'
+        unit 0 {
+            ## 'inet' was inherited from group 'member0'
+            family inet {
+                ## '10.49.111.198/19' was inherited from group 'member0'
+                address 10.49.111.198/19;
+            }
+        }
+    }
+}
+## 'snmp' was inherited from group 'global'
+snmp {
+    ## 'Systest lab' was inherited from group 'global'
+    location "Systest lab";
+    ## 'Jay Lloyd' was inherited from group 'global'
+    contact "Jay Lloyd";
+    ## 'public' was inherited from group 'global'
+    community public {
+        ## 'read-only' was inherited from group 'global'
+        authorization read-only;
+    }
+    ## 'private' was inherited from group 'global'
+    community private {
+        ## 'read-write' was inherited from group 'global'
+        authorization read-write;
+    }
+}
+event-options {
+    event-script {
+        file rpm-log.slax;
+    }
+}
+accounting-options {
+    file flow_11.255 {
+        size 1000000;
+        files 10;
+    }
+    filter-profile profile_11.255 {
+        file flow_11.255;
+        interval 5;
+        counters {
+            counter_11.255.105.101;
+            counter_11.255.105.102;
+            counter_11.255.105.103;
+            counter_11.255.105.104;
+            counter_11.255.105.106;
+            counter_11.255.105.107;
+            counter_others_11.0.0.105;
+        }
+    }
+}
+routing-options {
+    srlg {
+        srlg-100 {
+            srlg-value 100;
+            srlg-cost 50;
+        }
+        srlg-407 {
+            srlg-value 407;
+            srlg-cost 50;
+        }
+    }
+    ## 'static' was inherited from group 'global'
+    static {
+        /* corperate and alpha net */
+        ## '172.16.0.0/12' was inherited from group 'global'
+        route 172.16.0.0/12 {
+            ## '10.49.127.254' was inherited from group 'global'
+            next-hop 10.49.127.254;
+            ## 'retain' was inherited from group 'global'
+            retain;
+            ## 'no-readvertise' was inherited from group 'global'
+            no-readvertise;
+        }
+        /* eng lab nets */
+        ## '192.168.0.0/16' was inherited from group 'global'
+        route 192.168.0.0/16 {
+            ## '10.49.127.254' was inherited from group 'global'
+            next-hop 10.49.127.254;
+            ## 'retain' was inherited from group 'global'
+            retain;
+            ## 'no-readvertise' was inherited from group 'global'
+            no-readvertise;
+        }
+        /* IT Networks */
+        ## '10.0.0.0/8' was inherited from group 'global'
+        route 10.0.0.0/8 {
+            ## '10.49.127.254' was inherited from group 'global'
+            next-hop 10.49.127.254;
+            ## 'retain' was inherited from group 'global'
+            retain;
+            ## 'no-readvertise' was inherited from group 'global'
+            no-readvertise;
+        }
+        /* Sacramento */
+        ## '66.129.0.0/16' was inherited from group 'global'
+        route 66.129.0.0/16 {
+            ## '10.49.127.254' was inherited from group 'global'
+            next-hop 10.49.127.254;
+            ## 'retain' was inherited from group 'global'
+            retain;
+            ## 'no-readvertise' was inherited from group 'global'
+            no-readvertise;
+        }
+    }
+    router-id 11.0.0.105;
+    autonomous-system 11;
+}
+protocols {
+    topology-export;
+    rsvp {
+        interface all {
+            bandwidth 10m;
+            link-protection;
+        }
+        interface fxp0.0 {
+            disable;
+        }
+        interface ge-0/1/1.0 {
+            bandwidth 10m;
+            link-protection;
+        }
+    }
+    mpls {
+        lsp-external-controller pccd {
+            label-switched-path-template {
+                pccd_default_template;
+            }
+            pce-controlled-lsp PCS-AUTOBW-* {
+                label-switched-path-template {
+                    AUTOBW-template;
+                }
+            }
+            pce-controlled-lsp PCS-LP-* {
+                label-switched-path-template {
+                    LP-template;
+                }
+            }
+            pce-controlled-lsp PCS-NLP-* {
+                label-switched-path-template {
+                    NLP-template;
+                }
+            }
+            pce-controlled-lsp PCS-LFA-* {
+                label-switched-path-template {
+                    LFA-template;
+                }
+            }
+        }
+        statistics {
+            file lsp.stat size 5m files 2;
+            interval 10;
+            auto-bandwidth;
+        }
+        traffic-engineering {
+            bgp-igp-both-ribs;
+            database {
+                import {
+                    igp-topology;
+                    policy TE;
+                }
+            }
+        }
+        admin-groups {
+            blue 1;
+            red 2;
+        }
+        sensor-based-stats;
+        icmp-tunneling;
+        label-switched-path pccd_default_template {
+            template;
+            adaptive;
+        }
+        label-switched-path AUTOBW-template {
+            template;
+            link-protection;
+            adaptive;
+            auto-bandwidth {
+                adjust-interval 300;
+                adjust-threshold 0;
+                minimum-bandwidth 100k;
+            }
+        }
+        label-switched-path LP-template {
+            template;
+            link-protection;
+            adaptive;
+        }
+        label-switched-path NLP-template {
+            template;
+            node-link-protection;
+            adaptive;
+        }
+        label-switched-path LFA-template {
+            backup;
+            template;
+            adaptive;
+        }
+        label-switched-path rsvp-105-106 {
+            to 11.0.0.106;
+        }
+        label-switched-path PCE_vmx105_vmx107_2 {
+            from 11.0.0.105;
+            to 11.0.0.107;
+            primary PCE_vmx105_vmx107_2 {
+                bandwidth 0;
+                priority 7 7;
+            }
+        }
+        label-switched-path PCE_vmx105_jvm_2 {
+            from 11.0.0.105;
+            to 11.0.0.199;
+            primary PCE_vmx105_jvm_2 {
+                bandwidth 0;
+                priority 7 7;
+            }
+        }
+        label-switched-path PCE_vmx105_jvm {
+            from 11.0.0.105;
+            to 11.0.0.199;
+            primary PCE_vmx105_jvm {
+                bandwidth 0;
+                priority 7 7;
+            }
+        }
+        label-switched-path PCE_vmx105_vmx101 {
+            from 11.0.0.105;
+            to 11.0.0.101;
+            primary PCE_vmx105_vmx101 {
+                bandwidth 0;
+                priority 7 7;
+            }
+        }
+        label-switched-path PCE_vmx105_vmx101_2 {
+            from 11.0.0.105;
+            to 11.0.0.101;
+            primary PCE_vmx105_vmx101_2 {
+                bandwidth 0;
+                priority 7 7;
+            }
+        }
+        label-switched-path PCE_vmx105_vmx102 {
+            from 11.0.0.105;
+            to 11.0.0.102;
+            primary PCE_vmx105_vmx102 {
+                bandwidth 0;
+                priority 7 7;
+            }
+        }
+        label-switched-path PCE_vmx105_vmx102_2 {
+            from 11.0.0.105;
+            to 11.0.0.102;
+            primary PCE_vmx105_vmx102_2 {
+                bandwidth 0;
+                priority 7 7;
+            }
+        }
+        label-switched-path PCE_vmx105_vmx103 {
+            from 11.0.0.105;
+            to 11.0.0.103;
+            primary PCE_vmx105_vmx103 {
+                bandwidth 0;
+                priority 7 7;
+            }
+        }
+        label-switched-path PCE_vmx105_vmx103_2 {
+            from 11.0.0.105;
+            to 11.0.0.103;
+            primary PCE_vmx105_vmx103_2 {
+                bandwidth 0;
+                priority 7 7;
+            }
+        }
+        label-switched-path PCE_vmx105_vmx106 {
+            from 11.0.0.105;
+            to 11.0.0.106;
+            primary PCE_vmx105_vmx106 {
+                bandwidth 0;
+                priority 7 7;
+            }
+        }
+        label-switched-path PCE_vmx105_vmx106_2 {
+            from 11.0.0.105;
+            to 11.0.0.106;
+            primary PCE_vmx105_vmx106_2 {
+                bandwidth 0;
+                priority 7 7;
+            }
+        }
+        label-switched-path PCE_vmx105_vmx107 {
+            from 11.0.0.105;
+            to 11.0.0.107;
+            primary PCE_vmx105_vmx107 {
+                bandwidth 0;
+                priority 7 7;
+            }
+        }
+        path PCE_vmx105_vmx107_2;
+        path PCE_vmx105_jvm_2;
+        path PCE_vmx105_jvm;
+        path PCE_vmx105_vmx101;
+        path PCE_vmx105_vmx101_2;
+        path PCE_vmx105_vmx102;
+        path PCE_vmx105_vmx102_2;
+        path PCE_vmx105_vmx103;
+        path PCE_vmx105_vmx103_2;
+        path PCE_vmx105_vmx106;
+        path PCE_vmx105_vmx106_2;
+        path PCE_vmx105_vmx107;
+        interface all;
+        interface fxp0.0 {
+            disable;
+        }
+        interface ge-0/0/2.0 {
+            admin-group [ blue red ];
+        }
+        interface ge-0/0/4.0 {
+            admin-group red;
+        }
+        interface ge-0/1/1.0 {
+            admin-group [ red blue ];
+        }
+        interface ge-0/1/2.0 {
+            admin-group [ red blue ];
+        }
+    }
+    bgp {
+        group core {
+            type internal;
+            local-address 11.0.0.105;
+            import set-preference;
+            family inet {
+                unicast;
+            }
+            family l2vpn {
+                signaling;
+            }
+            family evpn {
+                signaling;
+            }
+            export direct;
+            neighbor 11.0.0.101;
+            neighbor 11.0.0.102;
+            neighbor 11.0.0.104;
+            neighbor 11.0.0.103;
+            neighbor 11.0.0.106;
+            neighbor 11.0.0.107;
+        }
+        group ns {
+            type internal;
+            family traffic-engineering {
+                unicast;
+            }
+            export TE;
+            neighbor 11.105.199.1;
+        }
+    }
+    isis {
+        traffic-engineering igp-topology;
+        source-packet-routing {
+            srgb start-label 1000 index-range 32;
+            node-segment {
+                ipv4-index 5;
+                ipv6-index 15;
+            }
+        }
+        level 1 disable;
+        level 2 wide-metrics-only;
+        interface ge-0/0/4.0 {
+            point-to-point;
+            level 2 metric 88;
+        }
+        interface ge-0/0/8.0 {
+            passive;
+            level 1 disable;
+        }
+        interface ge-0/0/9.0 {
+            passive;
+        }
+        interface ge-0/1/1.0 {
+            point-to-point;
+            level 2 metric 10;
+        }
+        interface ge-0/1/2.0 {
+            point-to-point;
+            level 2 metric 10;
+        }
+        interface all {
+            point-to-point;
+            level 2 metric 10;
+            level 1 disable;
+        }
+        interface fxp0.0 {
+            disable;
+        }
+        interface lo0.0 {
+            passive;
+        }
+    }
+    source-packet-routing {
+        lsp-external-controller pccd;
+    }
+    pcep {
+        pce ns1 {
+            destination-ipv4-address 172.16.18.1;
+            destination-port 4189;
+            pce-type active stateful;
+            lsp-provisioning;
+            p2mp-lsp-report-capability;
+            lsp-cleanup-timer 10;
+            spring-capability;
+            delegation-cleanup-timeout 10;
+        }
+    }
+}
+policy-options {
+    policy-statement TE {
+        from family traffic-engineering;
+        then accept;
+    }
+    policy-statement direct {
+        from {
+            protocol direct;
+            route-filter 11.255.0.0/16 orlonger;
+        }
+        then accept;
+    }
+    policy-statement set-preference {
+        from {
+            route-filter 11.255.0.0/16 orlonger;
+        }
+        then {
+            preference 5;
+            accept;
+        }
+    }
+}
+firewall {
+    filter filter-11.255 {
+        accounting-profile profile_11.255;
+        term 11.255.105.101 {
+            from {
+                destination-address {
+                    11.255.105.101/32;
+                }
+            }
+            then {
+                count counter_11.255.105.101;
+                accept;
+            }
+        }
+        term 11.255.105.102 {
+            from {
+                destination-address {
+                    11.255.105.102/32;
+                }
+            }
+            then {
+                count counter_11.255.105.102;
+                accept;
+            }
+        }
+        term 11.255.105.103 {
+            from {
+                destination-address {
+                    11.255.105.103/32;
+                }
+            }
+            then {
+                count counter_11.255.105.103;
+                accept;
+            }
+        }
+        term 11.255.105.104 {
+            from {
+                destination-address {
+                    11.255.105.104/32;
+                }
+            }
+            then {
+                count counter_11.255.105.104;
+                accept;
+            }
+        }
+        term 11.255.105.106 {
+            from {
+                destination-address {
+                    11.255.105.106/32;
+                }
+            }
+            then {
+                count counter_11.255.105.106;
+                accept;
+            }
+        }
+        term 11.255.105.107 {
+            from {
+                destination-address {
+                    11.255.105.107/32;
+                }
+            }
+            then {
+                count counter_11.255.105.107;
+                accept;
+            }
+        }
+        term default {
+            then {
+                count counter_others_11.0.0.105;
+                accept;
+            }
+        }
+    }
+}
+
+musa@vmx105> exit

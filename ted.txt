@@ -1,0 +1,159 @@
+spawn ssh musa@10.49.111.198
+Password:
+Last login: Mon Nov  5 01:27:31 2018 from 172.29.86.200
+--- JUNOS 18.2R1.2 Kernel 64-bit  JNPR-11.0-20180601.3634e75_buil
+musa@vmx105> show ted database extensive|no-more 
+TED database: 8 ISIS nodes 8 INET nodes
+NodeID: vmx101.00(11.0.0.101)
+  Type: Rtr, Age: 87 secs, LinkIn: 3, LinkOut: 3
+  Protocol: IS-IS(2)
+   11.0.0.101, 11.0.102.101, 11.255.102.101, 11.0.103.101, 11.255.103.101, 11.0.104.101, 11.255.104.101, 11.0.105.101, 11.255.105.101,
+   11.0.106.101, 11.255.106.101, 11.0.107.101, 11.255.107.101
+    To: vmx105.00(11.0.0.105), Local: 11.101.105.1, Remote: 11.101.105.2
+      Local interface index: 345, Remote interface index: 337
+      Color: 0x6 red blue
+      Metric: 10
+      IGP metric: 10
+      Static BW: 10Mbps
+      Reservable BW: 10Mbps
+      Available BW [priority] bps:
+          [0] 10Mbps       [1] 10Mbps      [2] 10Mbps      [3] 10Mbps      
+          [4] 10Mbps       [5] 10Mbps      [6] 10Mbps      [7] 10Mbps      
+      Interface Switching Capability Descriptor(1):
+        Switching type: Packet
+        Encoding type: Packet
+        Maximum LSP BW [priority] bps:
+          [0] 10Mbps       [1] 10Mbps      [2] 10Mbps      [3] 10Mbps      
+          [4] 10Mbps       [5] 10Mbps      [6] 10Mbps      [7] 10Mbps      
+      SRLGs: srlg-100
+      P2P Adjacency-SID:
+        IPV4, SID: 29, Flags: 0x30, Weight: 0
+    To: vmx102.00(11.0.0.102), Local: 11.101.102.1, Remote: 11.101.102.2
+      Local interface index: 338, Remote interface index: 338
+      Color: 0x6 red blue
+      Metric: 40
+      IGP metric: 40
+      Static BW: 10Mbps
+      Reservable BW: 10Mbps
+      Available BW [priority] bps:
+          [0] 10Mbps       [1] 10Mbps      [2] 10Mbps      [3] 10Mbps      
+          [4] 10Mbps       [5] 10Mbps      [6] 10Mbps      [7] 10Mbps      
+      Interface Switching Capability Descriptor(1):
+        Switching type: Packet
+        Encoding type: Packet
+        Maximum LSP BW [priority] bps:
+          [0] 10Mbps       [1] 10Mbps      [2] 10Mbps      [3] 10Mbps      
+          [4] 10Mbps       [5] 10Mbps      [6] 10Mbps      [7] 10Mbps      
+      SRLGs: srlg-100
+      P2P Adjacency-SID:
+        IPV4, SID: 28, Flags: 0x30, Weight: 0
+    To: vmx102.00(11.0.0.102), Local: 11.111.112.1, Remote: 11.111.112.2
+      Local interface index: 342, Remote interface index: 342
+      Color: 0x6 red blue
+      Metric: 40
+      IGP metric: 40
+      Static BW: 10Mbps
+      Reservable BW: 10Mbps
+      Available BW [priority] bps:
+          [0] 10Mbps       [1] 10Mbps      [2] 10Mbps      [3] 10Mbps      
+          [4] 10Mbps       [5] 10Mbps      [6] 10Mbps      [7] 10Mbps      
+      Interface Switching Capability Descriptor(1):
+        Switching type: Packet
+        Encoding type: Packet
+        Maximum LSP BW [priority] bps:
+          [0] 10Mbps       [1] 10Mbps      [2] 10Mbps      [3] 10Mbps      
+          [4] 10Mbps       [5] 10Mbps      [6] 10Mbps      [7] 10Mbps      
+      SRLGs: srlg-100
+      P2P Adjacency-SID:
+        IPV4, SID: 27, Flags: 0x30, Weight: 0
+   Prefixes: 
+     11.0.0.101/32
+      Metric: 0, Flags: 0x00
+      Prefix-SID:
+        SID: 1, Flags: 0x40, Algo: 0
+   SPRING-Capabilities:
+     SRGB block [Start: 1000, Range: 32, Flags: 0xc0]
+   SPRING-Algorithms:
+     Algo: 0
+NodeID: vmx102.00(11.0.0.102)
+  Type: Rtr, Age: 690 secs, LinkIn: 4, LinkOut: 4
+  Protocol: IS-IS(2)
+   11.0.0.102, 11.0.101.102, 11.255.101.102, 11.0.103.102, 11.255.103.102, 11.0.104.102, 11.255.104.102, 11.0.105.102, 11.255.105.102,
+   11.0.106.102, 11.255.106.102, 11.0.107.102, 11.255.107.102
+    To: vmx105.00(11.0.0.105), Local: 11.102.105.1, Remote: 11.102.105.2
+      Local interface index: 346, Remote interface index: 338
+      Color: 0x6 red blue
+      Metric: 10
+      IGP metric: 10
+      Static BW: 10Mbps
+      Reservable BW: 10Mbps
+      Available BW [priority] bps:
+          [0] 10Mbps       [1] 10Mbps      [2] 10Mbps      [3] 10Mbps      
+          [4] 10Mbps       [5] 10Mbps      [6] 10Mbps      [7] 10Mbps      
+      Interface Switching Capability Descriptor(1):
+        Switching type: Packet
+        Encoding type: Packet
+        Maximum LSP BW [priority] bps:
+          [0] 10Mbps       [1] 10Mbps      [2] 10Mbps      [3] 10Mbps      
+          [4] 10Mbps       [5] 10Mbps      [6] 10Mbps      [7] 10Mbps      
+      SRLGs: srlg-100
+      P2P Adjacency-SID:
+        IPV4, SID: 101, Flags: 0x30, Weight: 0
+    To: vmx106.00(11.0.0.106), Local: 11.102.106.1, Remote: 11.102.106.2
+      Local interface index: 347, Remote interface index: 338
+      Color: 0x2 blue
+      Metric: 50
+      IGP metric: 50
+      Static BW: 10Mbps
+      Reservable BW: 10Mbps
+      Available BW [priority] bps:
+          [0] 10Mbps       [1] 10Mbps      [2] 10Mbps      [3] 10Mbps      
+          [4] 10Mbps       [5] 10Mbps      [6] 10Mbps      [7] 10Mbps      
+      Interface Switching Capability Descriptor(1):
+        Switching type: Packet
+        Encoding type: Packet
+        Maximum LSP BW [priority] bps:
+          [0] 10Mbps       [1] 10Mbps      [2] 10Mbps      [3] 10Mbps      
+          [4] 10Mbps       [5] 10Mbps      [6] 10Mbps      [7] 10Mbps      
+      P2P Adjacency-SID:
+        IPV4, SID: 27, Flags: 0x30, Weight: 0
+    To: vmx101.00(11.0.0.101), Local: 11.101.102.2, Remote: 11.101.102.1
+      Local interface index: 338, Remote interface index: 338
+      Color: 0 <none>
+      Metric: 15
+      IGP metric: 15
+      Static BW: 10Mbps
+      Reservable BW: 10Mbps
+      Available BW [priority] bps:
+          [0] 10Mbps       [1] 10Mbps      [2] 10Mbps      [3] 10Mbps      
+          [4] 10Mbps       [5] 10Mbps      [6] 10Mbps      [7] 10Mbps      
+      Interface Switching Capability Descriptor(1):
+        Switching type: Packet
+        Encoding type: Packet
+        Maximum LSP BW [priority] bps:
+          [0] 10Mbps       [1] 10Mbps      [2] 10Mbps      [3] 10Mbps      
+          [4] 10Mbps       [5] 10Mbps      [6] 10Mbps      [7] 10Mbps      
+      P2P Adjacency-SID:
+        IPV4, SID: 25, Flags: 0x30, Weight: 0
+    To: vmx101.00(11.0.0.101), Local: 11.111.112.2, Remote: 11.111.112.1
+      Local interface index: 342, Remote interface index: 342
+      Color: 0 <none>
+      Metric: 15
+      IGP metric: 15
+      Static BW: 10Mbps
+      Reservable BW: 10Mbps
+      Available BW [priority] bps:
+          [0] 10Mbps       [1] 10Mbps      [2] 10Mbps      [3] 10Mbps      
+          [4] 10Mbps       [5] 10Mbps      [6] 10Mbps      [7] 10Mbps      
+      Interface Switching Capability Descriptor(1):
+        Switching type: Packet
+        Encoding type: Packet
+        Maximum LSP BW [priority] bps:
+          [0] 10Mbps       [1] 10Mbps      [2] 10Mbps      [3] 10Mbps      
+          [4] 10Mbps       [5] 10Mbps      [6] 10Mbps      [7] 10Mbps      
+      P2P Adjacency-SID:
+        IPV4, SID: 24, Flags: 0x30, Weight: 0
+   Prefixes: 
+     11.0.0.102/32
+      Metric: 0, Flags: 0x00
+      Prefix-SID:

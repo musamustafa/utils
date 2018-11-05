@@ -1,0 +1,22 @@
+#!/usr/bin/expect
+set user [lindex $argv 0]
+set host [lindex $argv 1]
+set pwd [lindex $argv 2]
+
+match_max 100000
+spawn ssh $user@$host
+expect "*?assword:*"
+send -- $pwd
+send -- "\r"
+expect "*?>"
+send -- "show configuration system host-name | display inheritance"
+send -- "\r"
+expect "*?>"
+send -- "show interfaces|no-more"
+send -- "\r"
+expect "*?>"
+send -- "show interfaces terse|no-more"
+send -- "\r"
+expect "*?>"
+send -- "exit"
+expect "*?>"

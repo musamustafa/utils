@@ -1,0 +1,93 @@
+spawn ssh musa@10.49.111.198
+Password:
+Last login: Mon Nov  5 01:27:19 2018 from 172.29.86.200
+--- JUNOS 18.2R1.2 Kernel 64-bit  JNPR-11.0-20180601.3634e75_buil
+musa@vmx105> show configuration system host-name | display inheritance 
+##
+## 'vmx105' was inherited from group 'member0'
+##
+host-name vmx105;
+
+musa@vmx105> show mpls lsp statistics ingress extensive logical-router all|no-more 
+ 
+logical-system: default
+Ingress LSP: 15 sessions
+
+11.0.0.199
+  From: 11.0.0.105, State: Dn, ActiveRoute: 0, LSPname: PCE_vmx105_jvm
+  No statistics available
+  ActivePath: (none)
+  LSPtype: Static Configured, Penultimate hop popping
+  LoadBalance: Random
+  Encoding type: Packet, Switching type: Packet, GPID: IPv4
+  LSP Self-ping Status : Enabled
+  Primary   PCE_vmx105_jvm   State: Dn
+    Priorities: 7 7
+    SmartOptimizeTimer: 180
+    Flap Count: 0
+    MBB Count: 0
+    Will be enqueued for recomputation in 2 second(s).
+    1 Nov  5 01:26:33.147 CSPF failed: no route toward 11.0.0.199[882 times]
+  Created: Sat Nov  3 23:17:31 2018
+
+11.0.0.199
+  From: 11.0.0.105, State: Dn, ActiveRoute: 0, LSPname: PCE_vmx105_jvm_2
+  No statistics available
+  ActivePath: (none)
+  LSPtype: Static Configured, Penultimate hop popping
+  LoadBalance: Random
+  Encoding type: Packet, Switching type: Packet, GPID: IPv4
+  LSP Self-ping Status : Enabled
+  Primary   PCE_vmx105_jvm_2 State: Dn
+    Priorities: 7 7
+    SmartOptimizeTimer: 180
+    Flap Count: 0
+    MBB Count: 0
+    Will be enqueued for recomputation in 8 second(s).
+    1 Nov  5 01:26:37.407 CSPF failed: no route toward 11.0.0.199[876 times]
+  Created: Sat Nov  3 23:17:10 2018
+
+11.0.0.101
+  From: 11.0.0.105, State: Up, ActiveRoute: 0, LSPname: PCE_vmx105_vmx101
+  Statistics: Packets 0, Bytes 0
+  Aggregate statistics: Packets 0, Bytes 0
+  ActivePath: PCE_vmx105_vmx101 (primary)
+  LSPtype: Static Configured, Penultimate hop popping
+  LoadBalance: Random
+  Encoding type: Packet, Switching type: Packet, GPID: IPv4
+  LSP Self-ping Status : Enabled
+ *Primary   PCE_vmx105_vmx101 State: Up
+    Priorities: 7 7
+    SmartOptimizeTimer: 180
+    Flap Count: 2
+    MBB Count: 0
+    Computed ERO (S [L] denotes strict [loose] hops): (CSPF metric: 183)
+ 11.105.107.2 S 11.106.107.1 S 11.102.106.1 S 11.101.102.1 S 
+    Received RRO (ProtectionFlag 1=Available 2=InUse 4=B/W 8=Node 10=SoftPreempt 20=Node-ID):
+          11.105.107.2(Label=141) 11.106.107.1(Label=147) 11.102.106.1(Label=135) 11.101.102.1(Label=3)
+   40 Nov  3 23:47:52.671 Self-ping ended successfully
+   39 Nov  3 23:47:27.170 Selected as active path
+   38 Nov  3 23:47:27.168 Up
+   37 Nov  3 23:47:27.168 Self-ping started
+   36 Nov  3 23:47:27.168 Self-ping enqueued
+   35 Nov  3 23:47:27.168 Record Route:  11.105.107.2(Label=141) 11.106.107.1(Label=147) 11.102.106.1(Label=135) 11.101.102.1(Label=3)
+   34 Nov  3 23:47:26.841 Originate Call
+   33 Nov  3 23:47:26.841 Clear Call
+   32 Nov  3 23:47:26.841 CSPF: computation result accepted  11.105.107.2 11.106.107.1 11.102.106.1 11.101.102.1
+   31 Nov  3 23:47:26.840 CSPF: link down/deleted: 11.105.106.1(11.0.0.105:333)(vmx105.00/11.0.0.105)->11.105.106.2(11.0.0.106:335)(vmx106.00/11.0.0.106)
+   30 Nov  3 23:47:26.830 Originate Call
+   29 Nov  3 23:47:26.829 Clear Call
+   28 Nov  3 23:47:26.829 CSPF: computation result accepted  11.105.107.2 11.106.107.1 11.102.106.1 11.111.112.1
+   27 Nov  3 23:47:26.819 Deselected as active
+   26 Nov  3 23:47:26.814 11.105.106.1: No Route toward dest
+   25 Nov  3 23:47:26.814 11.105.106.1: Down
+   24 Nov  3 23:46:32.471 Self-ping ended successfully
+   23 Nov  3 23:46:10.317 Selected as active path
+   22 Nov  3 23:46:10.316 Up
+   21 Nov  3 23:46:10.316 Self-ping started
+   20 Nov  3 23:46:10.316 Self-ping enqueued
+   19 Nov  3 23:46:10.316 Record Route:  11.105.106.2(Label=117) 11.102.106.1(Label=107) 11.101.102.1(Label=3)
+   18 Nov  3 23:46:10.131 Originate Call
+   17 Nov  3 23:46:10.131 Clear Call
+   16 Nov  3 23:46:10.131 CSPF: computation result accepted  11.105.106.2 11.102.106.1 11.101.102.1
+   15 Nov  3 23:46:10.131 CSPF: link down/deleted: 11.101.105.2(11.0.0.105:337)(vmx105.00/11.0.0.105)->11.101.105.1(11.0.0.101:345)(vmx101.00/11.0.0.101)
