@@ -3,7 +3,7 @@
 
 read -p "Enter your username : " user
 read -s -p "Enter Password  : " pwd
-list=`cat node_list.txt`
+list=(`cat node_list.txt`)
 #user="musa"
 
 #do it all
